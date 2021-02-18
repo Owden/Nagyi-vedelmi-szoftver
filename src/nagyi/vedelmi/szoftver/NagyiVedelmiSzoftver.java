@@ -23,8 +23,8 @@ public class NagyiVedelmiSzoftver {
      */
     public static void main(String[] args) {
         String farkasIranya = Beolvasas();
-        String uzenet = NagyiÉrtesítő(farkasIranya);       
-        TámadásLogolás(uzenet);
+        String uzenet = NagyiErtesito(farkasIranya);       
+        TamadasLogolas(uzenet);
         
     }
     
@@ -35,7 +35,7 @@ public class NagyiVedelmiSzoftver {
         return consolInput.nextLine();
     }
     
-    private static void TámadásLogolás(String uzenet) {
+    private static void TamadasLogolas(String uzenet) {
         try {
             File logFile = new File("Farkastamadasok.txt");
             logFile.createNewFile(); 
@@ -55,7 +55,7 @@ public class NagyiVedelmiSzoftver {
     
     }
     
-    private static String NagyiÉrtesítő(String farkasIranya) {
+    private static String NagyiErtesito(String farkasIranya) {
         String uzenet = "Beütött a baj " +farkasIranya+ "i irányból!";
 
         System.out.println(uzenet);
