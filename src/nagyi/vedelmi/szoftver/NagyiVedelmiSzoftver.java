@@ -23,11 +23,7 @@ public class NagyiVedelmiSzoftver {
      */
     public static void main(String[] args) {
         String farkasIranya = Beolvasas();
-        
-        String uzenet = "Beütött a baj " +farkasIranya+ "i irányból!";
-
-        System.out.println(uzenet);
-       
+        String uzenet = NagyiÉrtesítő(farkasIranya);       
         TámadásLogolás(uzenet);
         
     }
@@ -57,6 +53,14 @@ public class NagyiVedelmiSzoftver {
             e.printStackTrace();
         }       
     
+    }
+    
+    private static String NagyiÉrtesítő(String farkasIranya) {
+        String uzenet = "Beütött a baj " +farkasIranya+ "i irányból!";
+
+        System.out.println(uzenet);
+        
+        return uzenet;
     }
     
 }
