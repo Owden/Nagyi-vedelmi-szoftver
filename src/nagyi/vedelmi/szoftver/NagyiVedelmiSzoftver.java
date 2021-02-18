@@ -27,7 +27,19 @@ public class NagyiVedelmiSzoftver {
         String uzenet = "Beütött a baj " +farkasIranya+ "i irányból!";
 
         System.out.println(uzenet);
+       
+        TámadásLogolás(uzenet);
         
+    }
+    
+    private static String Beolvasas() {
+        Scanner consolInput = new Scanner(System.in);
+        System.out.println("Merről jön a Farkas?");
+        
+        return consolInput.nextLine();
+    }
+    
+    private static void TámadásLogolás(String uzenet) {
         try {
             File logFile = new File("Farkastamadasok.txt");
             logFile.createNewFile(); 
@@ -44,13 +56,7 @@ public class NagyiVedelmiSzoftver {
             System.out.println("Nem sikerült lejegyezni, emlékezz rá!");
             e.printStackTrace();
         }       
-    }
     
-    private static String Beolvasas() {
-        Scanner consolInput = new Scanner(System.in);
-        System.out.println("Merről jön a Farkas?");
-        
-        return consolInput.nextLine();
     }
     
 }
