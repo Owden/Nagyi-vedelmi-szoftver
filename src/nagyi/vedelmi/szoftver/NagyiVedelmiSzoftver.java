@@ -25,11 +25,15 @@ public class NagyiVedelmiSzoftver {
         Beolvasas beolvasas = new Beolvasas();
         String farkasIranya = beolvasas.getFarkasIrany();
         
-        NagyiErtesito nagyiErtesito = new NagyiErtesito();
+        Ertesito nagyiErtesito = new Ertesito(true);
         nagyiErtesito.ertesitsd(farkasIranya);
         String uzenet = nagyiErtesito.getUzenet();
         
-        //String uzenet = nagyiErtesito(farkasIranya);      
+        tamadasLogolas(uzenet);
+        
+        Ertesito vadaszErtesito = new Ertesito(false);
+        vadaszErtesito.ertesitsd(farkasIranya);
+        uzenet = vadaszErtesito.getUzenet(); 
         
         tamadasLogolas(uzenet);
         
