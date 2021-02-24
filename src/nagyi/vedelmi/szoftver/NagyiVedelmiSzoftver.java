@@ -22,17 +22,11 @@ public class NagyiVedelmiSzoftver {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        String farkasIranya = beolvasas();
+        Beolvasas beolvasas = new Beolvasas();
+        String farkasIranya = beolvasas.getFarkasIrany();
         String uzenet = nagyiErtesito(farkasIranya);       
         tamadasLogolas(uzenet);
         
-    }
-    
-    private static String beolvasas() {
-        Scanner consolInput = new Scanner(System.in);
-        System.out.println("Merről jön a Farkas?");
-        
-        return consolInput.nextLine();
     }
     
     private static void tamadasLogolas(String uzenet) {
