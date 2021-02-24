@@ -22,17 +22,21 @@ public class NagyiVedelmiSzoftver {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        String farkasIranya = beolvasas();
-        String uzenet = nagyiErtesito(farkasIranya);       
+        Beolvasas beolvasas = new Beolvasas();
+        String farkasIranya = beolvasas.getFarkasIrany();
+        
+        Ertesito nagyiErtesito = new Ertesito(true);
+        nagyiErtesito.ertesitsd(farkasIranya);
+        String uzenet = nagyiErtesito.getUzenet();
+        
         tamadasLogolas(uzenet);
         
-    }
-    
-    private static String beolvasas() {
-        Scanner consolInput = new Scanner(System.in);
-        System.out.println("Merről jön a Farkas?");
+        Ertesito vadaszErtesito = new Ertesito(false);
+        vadaszErtesito.ertesitsd(farkasIranya);
+        uzenet = vadaszErtesito.getUzenet(); 
         
-        return consolInput.nextLine();
+        tamadasLogolas(uzenet);
+        
     }
     
     private static void tamadasLogolas(String uzenet) {
@@ -54,13 +58,5 @@ public class NagyiVedelmiSzoftver {
         }       
     
     }
-    
-    private static String nagyiErtesito(String farkasIranya) {
-        String uzenet = "Beütött a baj " +farkasIranya+ "i irányból!";
-
-        System.out.println(uzenet);
-        
-        return uzenet;
-    }
-    
+       
 }
