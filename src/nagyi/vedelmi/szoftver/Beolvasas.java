@@ -12,9 +12,14 @@ import java.util.Scanner;
  * @author Pesta
  */
 public class Beolvasas {
+    
+    Scanner consolInput;
+    
+    public Beolvasas() {        
+        this.consolInput = new Scanner(System.in);
+    }
         
     public String getFarkasIrany() {
-        Scanner consolInput = new Scanner(System.in);
         System.out.println("Merről jön a Farkas?");
         
         return consolInput.nextLine();
