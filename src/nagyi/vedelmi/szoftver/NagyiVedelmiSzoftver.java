@@ -54,13 +54,5 @@ public class NagyiVedelmiSzoftver {
         }       
     
     }
-    
-    private static String nagyiErtesito(String farkasIranya) {
-        String uzenet = "Beütött a baj " +farkasIranya+ "i irányból!";
-
-        System.out.println(uzenet);
-        
-        return uzenet;
-    }
-    
+       
 }
