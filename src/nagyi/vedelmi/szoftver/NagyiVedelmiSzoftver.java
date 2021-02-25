@@ -6,11 +6,6 @@
 package nagyi.vedelmi.szoftver;
 
 import java.io.IOException;
-import java.util.Scanner;
-import java.io.File;
-import java.io.FileWriter; 
-import java.time.format.DateTimeFormatter;  
-import java.time.LocalDateTime;    
 
 /**
  *
@@ -20,43 +15,24 @@ public class NagyiVedelmiSzoftver {
 
     /**
      * @param args the command line arguments
+     * @throws java.io.IOException
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         Beolvasas beolvasas = new Beolvasas();
-        String farkasIranya = beolvasas.getFarkasIrany();
-        
         Ertesito nagyiErtesito = new Ertesito(true);
+        Ertesito vadaszErtesito = new Ertesito(false);
+        Logolo logolas = new Logolo();        
+
+        String farkasIranya = beolvasas.getFarkasIrany();
+                
         nagyiErtesito.ertesitsd(farkasIranya);
         String uzenet = nagyiErtesito.getUzenet();
+        logolas.logold(uzenet);
         
-        tamadasLogolas(uzenet);
-        
-        Ertesito vadaszErtesito = new Ertesito(false);
         vadaszErtesito.ertesitsd(farkasIranya);
         uzenet = vadaszErtesito.getUzenet(); 
-        
-        tamadasLogolas(uzenet);
-        
-    }
-    
-    private static void tamadasLogolas(String uzenet) {
-        try {
-            File logFile = new File("Farkastamadasok.txt");
-            logFile.createNewFile(); 
+        logolas.logold(uzenet);
 
-            DateTimeFormatter idoFormazo = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");  
-            LocalDateTime most = LocalDateTime.now();  
-            
-            FileWriter logFileIro = new FileWriter(logFile.getName(), true);            
-            logFileIro.append(idoFormazo.format(most) + "\t" + uzenet + "\n");
-            logFileIro.close();
-            
-        } 
-        catch (IOException e) {
-            System.out.println("Nem sikerült lejegyezni, emlékezz rá!");
-            e.printStackTrace();
-        }       
-    
+        logolas.fajlBezaras();
     }
-       
 }
