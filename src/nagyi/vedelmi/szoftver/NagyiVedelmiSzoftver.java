@@ -18,6 +18,7 @@ public class NagyiVedelmiSzoftver {
      * @throws java.io.IOException
      */
     public static void main(String[] args) throws IOException {
+        NagyiErtesitoAblakUI nagyiErtesitoUI = new NagyiErtesitoAblakUI();               
         Beolvasas beolvasas = new Beolvasas();
         Ertesito nagyiErtesito = new Ertesito(true);
         Ertesito vadaszErtesito = new Ertesito(false);
@@ -27,6 +28,8 @@ public class NagyiVedelmiSzoftver {
                 
         nagyiErtesito.ertesitsd(farkasIranya);
         String uzenet = nagyiErtesito.getUzenet();
+        nagyiErtesitoUI.setUzenet(uzenet);
+        nagyiErtesitoUI.setVisible(true);
         logolas.logold(uzenet);
         
         vadaszErtesito.ertesitsd(farkasIranya);
