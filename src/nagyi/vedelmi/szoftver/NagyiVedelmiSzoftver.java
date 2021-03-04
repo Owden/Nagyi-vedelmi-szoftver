@@ -18,7 +18,11 @@ public class NagyiVedelmiSzoftver {
      * @throws java.io.IOException
      */
     public static void main(String[] args) throws IOException {
-        NagyiErtesitoAblakUI nagyiErtesitoUI = new NagyiErtesitoAblakUI();               
+        FarkasTamadasIranyUI farkasTamadasUI = new FarkasTamadasIranyUI();
+        farkasTamadasUI.setVisible(true);
+
+
+        NagyiErtesitoAblakUI nagyiErtesitoUI = new NagyiErtesitoAblakUI(); 
         Beolvasas beolvasas = new Beolvasas();
         Ertesito nagyiErtesito = new Ertesito(true);
         Ertesito vadaszErtesito = new Ertesito(false);
