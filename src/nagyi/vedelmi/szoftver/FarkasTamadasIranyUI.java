@@ -5,6 +5,8 @@
  */
 package nagyi.vedelmi.szoftver;
 
+import java.io.IOException;
+
 /**
  *
  * @author Pesta
@@ -125,19 +127,95 @@ public class FarkasTamadasIranyUI extends javax.swing.JFrame {
     }// </editor-fold>                        
 
     private void eszakGombMouseClicked(java.awt.event.MouseEvent evt) {                                       
-        System.out.println("észak");
+        String farkasIranya = "észak";
+        try {
+            Ertesito nagyiErtesito = new Ertesito(true);
+            Ertesito vadaszErtesito = new Ertesito(false);
+            Logolo logolas = new Logolo();
+            NagyiErtesitoAblakUI nagyiErtesitoUI = new NagyiErtesitoAblakUI(); 
+            nagyiErtesito.ertesitsd(farkasIranya);
+            String uzenet = nagyiErtesito.getUzenet();
+            nagyiErtesitoUI.setUzenet(uzenet);
+            nagyiErtesitoUI.setVisible(true);
+            logolas.logold(uzenet);
+
+            vadaszErtesito.ertesitsd(farkasIranya);
+            uzenet = vadaszErtesito.getUzenet(); 
+            logolas.logold(uzenet);
+
+            logolas.fajlBezaras();
+        }
+        catch (IOException ex) {
+        }
     }                                      
 
     private void nyugatGombMouseClicked(java.awt.event.MouseEvent evt) {                                        
-        System.out.println("nyugat");
+        String farkasIranya = "nyugat";
+        try {
+            Ertesito nagyiErtesito = new Ertesito(true);
+            Ertesito vadaszErtesito = new Ertesito(false);
+            Logolo logolas = new Logolo();
+            NagyiErtesitoAblakUI nagyiErtesitoUI = new NagyiErtesitoAblakUI(); 
+            nagyiErtesito.ertesitsd(farkasIranya);
+            String uzenet = nagyiErtesito.getUzenet();
+            nagyiErtesitoUI.setUzenet(uzenet);
+            nagyiErtesitoUI.setVisible(true);
+            logolas.logold(uzenet);
+
+            vadaszErtesito.ertesitsd(farkasIranya);
+            uzenet = vadaszErtesito.getUzenet(); 
+            logolas.logold(uzenet);
+
+            logolas.fajlBezaras();
+        }
+        catch (IOException ex) {
+        }
     }                                       
 
     private void delGombMouseClicked(java.awt.event.MouseEvent evt) {                                     
-        System.out.println("dél");
+        String farkasIranya = "dél";
+        try {
+            Ertesito nagyiErtesito = new Ertesito(true);
+            Ertesito vadaszErtesito = new Ertesito(false);
+            Logolo logolas = new Logolo();
+            NagyiErtesitoAblakUI nagyiErtesitoUI = new NagyiErtesitoAblakUI(); 
+            nagyiErtesito.ertesitsd(farkasIranya);
+            String uzenet = nagyiErtesito.getUzenet();
+            nagyiErtesitoUI.setUzenet(uzenet);
+            nagyiErtesitoUI.setVisible(true);
+            logolas.logold(uzenet);
+
+            vadaszErtesito.ertesitsd(farkasIranya);
+            uzenet = vadaszErtesito.getUzenet(); 
+            logolas.logold(uzenet);
+
+            logolas.fajlBezaras();
+        }
+        catch (IOException ex) {
+        }
     }                                    
 
     private void keletGombMouseClicked(java.awt.event.MouseEvent evt) {                                       
-        System.out.println("kelet");
+        String farkasIranya = "kelet";
+        try {
+            Ertesito nagyiErtesito = new Ertesito(true);
+            Ertesito vadaszErtesito = new Ertesito(false);
+            Logolo logolas = new Logolo();
+            NagyiErtesitoAblakUI nagyiErtesitoUI = new NagyiErtesitoAblakUI(); 
+            nagyiErtesito.ertesitsd(farkasIranya);
+            String uzenet = nagyiErtesito.getUzenet();
+            nagyiErtesitoUI.setUzenet(uzenet);
+            nagyiErtesitoUI.setVisible(true);
+            logolas.logold(uzenet);
+
+            vadaszErtesito.ertesitsd(farkasIranya);
+            uzenet = vadaszErtesito.getUzenet(); 
+            logolas.logold(uzenet);
+
+            logolas.fajlBezaras();
+        }
+        catch (IOException ex) {
+        }
     }                                      
     
     // Variables declaration - do not modify                     

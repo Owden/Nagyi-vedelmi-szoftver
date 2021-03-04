@@ -19,27 +19,6 @@ public class NagyiVedelmiSzoftver {
      */
     public static void main(String[] args) throws IOException {
         FarkasTamadasIranyUI farkasTamadasUI = new FarkasTamadasIranyUI();
-        farkasTamadasUI.setVisible(true);
-
-
-        NagyiErtesitoAblakUI nagyiErtesitoUI = new NagyiErtesitoAblakUI(); 
-        Beolvasas beolvasas = new Beolvasas();
-        Ertesito nagyiErtesito = new Ertesito(true);
-        Ertesito vadaszErtesito = new Ertesito(false);
-        Logolo logolas = new Logolo();        
-
-        String farkasIranya = beolvasas.getFarkasIrany();
-                
-        nagyiErtesito.ertesitsd(farkasIranya);
-        String uzenet = nagyiErtesito.getUzenet();
-        nagyiErtesitoUI.setUzenet(uzenet);
-        nagyiErtesitoUI.setVisible(true);
-        logolas.logold(uzenet);
-        
-        vadaszErtesito.ertesitsd(farkasIranya);
-        uzenet = vadaszErtesito.getUzenet(); 
-        logolas.logold(uzenet);
-
-        logolas.fajlBezaras();
+        farkasTamadasUI.setVisible(true);       
     }
 }
