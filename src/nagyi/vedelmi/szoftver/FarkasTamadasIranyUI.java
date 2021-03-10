@@ -128,7 +128,8 @@ public class FarkasTamadasIranyUI extends javax.swing.JFrame {
        
     private void iranyGombMouseClicked(java.awt.event.MouseEvent evt) {                                       
         this.riadoSzervezo.riado(((javax.swing.JButton) evt.getSource()).getText());
-    }                                      
+    }  
+    
     private RiadoSzervezo riadoSzervezo;
     // Variables declaration - do not modify                     
     private javax.swing.JButton delGomb;
