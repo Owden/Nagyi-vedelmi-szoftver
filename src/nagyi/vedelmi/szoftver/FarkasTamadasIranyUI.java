@@ -21,7 +21,29 @@ public class FarkasTamadasIranyUI extends javax.swing.JFrame {
         this.iranyGombPanel.setAlignmentX(CENTER_ALIGNMENT);
         this.iranyGombPanel.setAlignmentY(CENTER_ALIGNMENT);
     }
+    
+    private void riado(String farkasIranya) {
+        try {
+            Ertesito nagyiErtesito = new Ertesito(true);
+            Ertesito vadaszErtesito = new Ertesito(false);
+            Logolo logolas = new Logolo();
+            NagyiErtesitoAblakUI nagyiErtesitoUI = new NagyiErtesitoAblakUI(); 
+            nagyiErtesito.ertesitsd(farkasIranya);
+            String uzenet = nagyiErtesito.getUzenet();
+            nagyiErtesitoUI.setUzenet(uzenet);
+            nagyiErtesitoUI.setVisible(true);
+            logolas.logold(uzenet);
 
+            vadaszErtesito.ertesitsd(farkasIranya);
+            uzenet = vadaszErtesito.getUzenet(); 
+            logolas.logold(uzenet);
+
+            logolas.fajlBezaras();
+        }
+        catch (IOException ex) {
+        }
+    
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -57,14 +79,14 @@ public class FarkasTamadasIranyUI extends javax.swing.JFrame {
         delGomb.setText("Dél");
         delGomb.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                delGombMouseClicked(evt);
+                iranyGombMouseClicked(evt);
             }
         });
 
         keletGomb.setText("Kelet");
         keletGomb.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                keletGombMouseClicked(evt);
+                iranyGombMouseClicked(evt);
             }
         });
 
@@ -73,14 +95,14 @@ public class FarkasTamadasIranyUI extends javax.swing.JFrame {
         eszakGomb.setMinimumSize(new java.awt.Dimension(300, 60));
         eszakGomb.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                eszakGombMouseClicked(evt);
+                iranyGombMouseClicked(evt);
             }
         });
 
         nyugatGomb.setText("Nyugat");
         nyugatGomb.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                nyugatGombMouseClicked(evt);
+                iranyGombMouseClicked(evt);
             }
         });
 
@@ -125,97 +147,9 @@ public class FarkasTamadasIranyUI extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>                        
-
-    private void eszakGombMouseClicked(java.awt.event.MouseEvent evt) {                                       
-        String farkasIranya = "észak";
-        try {
-            Ertesito nagyiErtesito = new Ertesito(true);
-            Ertesito vadaszErtesito = new Ertesito(false);
-            Logolo logolas = new Logolo();
-            NagyiErtesitoAblakUI nagyiErtesitoUI = new NagyiErtesitoAblakUI(); 
-            nagyiErtesito.ertesitsd(farkasIranya);
-            String uzenet = nagyiErtesito.getUzenet();
-            nagyiErtesitoUI.setUzenet(uzenet);
-            nagyiErtesitoUI.setVisible(true);
-            logolas.logold(uzenet);
-
-            vadaszErtesito.ertesitsd(farkasIranya);
-            uzenet = vadaszErtesito.getUzenet(); 
-            logolas.logold(uzenet);
-
-            logolas.fajlBezaras();
-        }
-        catch (IOException ex) {
-        }
-    }                                      
-
-    private void nyugatGombMouseClicked(java.awt.event.MouseEvent evt) {                                        
-        String farkasIranya = "nyugat";
-        try {
-            Ertesito nagyiErtesito = new Ertesito(true);
-            Ertesito vadaszErtesito = new Ertesito(false);
-            Logolo logolas = new Logolo();
-            NagyiErtesitoAblakUI nagyiErtesitoUI = new NagyiErtesitoAblakUI(); 
-            nagyiErtesito.ertesitsd(farkasIranya);
-            String uzenet = nagyiErtesito.getUzenet();
-            nagyiErtesitoUI.setUzenet(uzenet);
-            nagyiErtesitoUI.setVisible(true);
-            logolas.logold(uzenet);
-
-            vadaszErtesito.ertesitsd(farkasIranya);
-            uzenet = vadaszErtesito.getUzenet(); 
-            logolas.logold(uzenet);
-
-            logolas.fajlBezaras();
-        }
-        catch (IOException ex) {
-        }
-    }                                       
-
-    private void delGombMouseClicked(java.awt.event.MouseEvent evt) {                                     
-        String farkasIranya = "dél";
-        try {
-            Ertesito nagyiErtesito = new Ertesito(true);
-            Ertesito vadaszErtesito = new Ertesito(false);
-            Logolo logolas = new Logolo();
-            NagyiErtesitoAblakUI nagyiErtesitoUI = new NagyiErtesitoAblakUI(); 
-            nagyiErtesito.ertesitsd(farkasIranya);
-            String uzenet = nagyiErtesito.getUzenet();
-            nagyiErtesitoUI.setUzenet(uzenet);
-            nagyiErtesitoUI.setVisible(true);
-            logolas.logold(uzenet);
-
-            vadaszErtesito.ertesitsd(farkasIranya);
-            uzenet = vadaszErtesito.getUzenet(); 
-            logolas.logold(uzenet);
-
-            logolas.fajlBezaras();
-        }
-        catch (IOException ex) {
-        }
-    }                                    
-
-    private void keletGombMouseClicked(java.awt.event.MouseEvent evt) {                                       
-        String farkasIranya = "kelet";
-        try {
-            Ertesito nagyiErtesito = new Ertesito(true);
-            Ertesito vadaszErtesito = new Ertesito(false);
-            Logolo logolas = new Logolo();
-            NagyiErtesitoAblakUI nagyiErtesitoUI = new NagyiErtesitoAblakUI(); 
-            nagyiErtesito.ertesitsd(farkasIranya);
-            String uzenet = nagyiErtesito.getUzenet();
-            nagyiErtesitoUI.setUzenet(uzenet);
-            nagyiErtesitoUI.setVisible(true);
-            logolas.logold(uzenet);
-
-            vadaszErtesito.ertesitsd(farkasIranya);
-            uzenet = vadaszErtesito.getUzenet(); 
-            logolas.logold(uzenet);
-
-            logolas.fajlBezaras();
-        }
-        catch (IOException ex) {
-        }
+       
+    private void iranyGombMouseClicked(java.awt.event.MouseEvent evt) {                                       
+        this.riado(((javax.swing.JButton) evt.getSource()).getText());
     }                                      
     
     // Variables declaration - do not modify                     
