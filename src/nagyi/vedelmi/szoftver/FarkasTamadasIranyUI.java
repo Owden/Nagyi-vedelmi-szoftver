@@ -76,21 +76,21 @@ public class FarkasTamadasIranyUI extends javax.swing.JFrame {
             .addGap(0, 175, Short.MAX_VALUE)
         );
 
-        delGomb.setText("Dél");
+        delGomb.setText("dél");
         delGomb.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 iranyGombMouseClicked(evt);
             }
         });
 
-        keletGomb.setText("Kelet");
+        keletGomb.setText("kelet");
         keletGomb.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 iranyGombMouseClicked(evt);
             }
         });
 
-        eszakGomb.setText("Észak");
+        eszakGomb.setText("észak");
         eszakGomb.setMaximumSize(new java.awt.Dimension(500, 1000));
         eszakGomb.setMinimumSize(new java.awt.Dimension(300, 60));
         eszakGomb.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -99,7 +99,7 @@ public class FarkasTamadasIranyUI extends javax.swing.JFrame {
             }
         });
 
-        nyugatGomb.setText("Nyugat");
+        nyugatGomb.setText("nyugat");
         nyugatGomb.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 iranyGombMouseClicked(evt);
