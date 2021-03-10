@@ -28,6 +28,7 @@ public class NagyiErtesitoAblakUI extends javax.swing.JFrame {
     private void initComponents() {
 
         ertesitesiCimke = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
         bezarasGomb = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -40,35 +41,31 @@ public class NagyiErtesitoAblakUI extends javax.swing.JFrame {
         ertesitesiCimke.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         ertesitesiCimke.setPreferredSize(new java.awt.Dimension(800, 600));
 
+        jPanel2.setLayout(new java.awt.CardLayout());
+
         bezarasGomb.setText("OK!");
         bezarasGomb.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 bezarasGombMouseClicked(evt);
             }
         });
+        jPanel2.add(bezarasGomb, "card2");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(73, 73, 73)
-                        .addComponent(ertesitesiCimke, javax.swing.GroupLayout.PREFERRED_SIZE, 723, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(389, 389, 389)
-                        .addComponent(bezarasGomb)))
-                .addContainerGap(934, Short.MAX_VALUE))
+            .addComponent(ertesitesiCimke, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1078, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addGap(51, 51, 51)
-                .addComponent(ertesitesiCimke, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(bezarasGomb)
-                .addContainerGap(980, Short.MAX_VALUE))
+                .addComponent(ertesitesiCimke, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(38, 38, 38)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(330, Short.MAX_VALUE))
         );
 
         pack();
@@ -81,6 +78,7 @@ public class NagyiErtesitoAblakUI extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bezarasGomb;
     private javax.swing.JLabel ertesitesiCimke;
+    private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
 
     public void setUzenet(String uzenet) {
