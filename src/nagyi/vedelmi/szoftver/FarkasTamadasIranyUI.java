@@ -5,8 +5,6 @@
  */
 package nagyi.vedelmi.szoftver;
 
-import java.io.IOException;
-
 /**
  *
  * @author Pesta
@@ -20,30 +18,10 @@ public class FarkasTamadasIranyUI extends javax.swing.JFrame {
         initComponents();
         this.iranyGombPanel.setAlignmentX(CENTER_ALIGNMENT);
         this.iranyGombPanel.setAlignmentY(CENTER_ALIGNMENT);
+        this.riadoSzervezo = new RiadoSzervezo();
     }
     
-    private void riado(String farkasIranya) {
-        try {
-            Ertesito nagyiErtesito = new Ertesito(true);
-            Ertesito vadaszErtesito = new Ertesito(false);
-            Logolo logolas = new Logolo();
-            NagyiErtesitoAblakUI nagyiErtesitoUI = new NagyiErtesitoAblakUI(); 
-            nagyiErtesito.ertesitsd(farkasIranya);
-            String uzenet = nagyiErtesito.getUzenet();
-            nagyiErtesitoUI.setUzenet(uzenet);
-            nagyiErtesitoUI.setVisible(true);
-            logolas.logold(uzenet);
-
-            vadaszErtesito.ertesitsd(farkasIranya);
-            uzenet = vadaszErtesito.getUzenet(); 
-            logolas.logold(uzenet);
-
-            logolas.fajlBezaras();
-        }
-        catch (IOException ex) {
-        }
-    
-    }
+    /* */
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -149,9 +127,9 @@ public class FarkasTamadasIranyUI extends javax.swing.JFrame {
     }// </editor-fold>                        
        
     private void iranyGombMouseClicked(java.awt.event.MouseEvent evt) {                                       
-        this.riado(((javax.swing.JButton) evt.getSource()).getText());
+        this.riadoSzervezo.riado(((javax.swing.JButton) evt.getSource()).getText());
     }                                      
-    
+    private RiadoSzervezo riadoSzervezo;
     // Variables declaration - do not modify                     
     private javax.swing.JButton delGomb;
     private javax.swing.JButton eszakGomb;
