@@ -22,8 +22,6 @@ public class Ertesito {
             this.uzenet = "Beütött a baj " +farkasIranya+ "i irányból!";
         else
             this.uzenet = "A Nagyinál beütött a baj " +farkasIranya+ "i irányból!";
-        
-        System.out.println(this.uzenet);
     }
     
     public String getUzenet(){
