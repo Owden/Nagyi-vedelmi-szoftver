@@ -5,6 +5,7 @@
  */
 package nagyi.vedelmi.szoftver;
 
+import java.io.File;
 import java.io.IOException;
 
 /**
@@ -18,7 +19,9 @@ public class NagyiVedelmiSzoftver {
      * @throws java.io.IOException
      */
     public static void main(String[] args) throws IOException {
-        FarkasTamadasIranyUI farkasTamadasUI = new FarkasTamadasIranyUI();
+        //LogoloInterface logolo = new FajlLogolo(new File("Farkastamadasok.txt"));
+        LogoloInterface logolo = new KonzolLogolo();
+        FarkasTamadasIranyUI farkasTamadasUI = new FarkasTamadasIranyUI(logolo);
         farkasTamadasUI.setVisible(true);       
     }
 }

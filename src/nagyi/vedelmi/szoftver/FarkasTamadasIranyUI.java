@@ -14,11 +14,11 @@ public class FarkasTamadasIranyUI extends javax.swing.JFrame {
     /**
      * Creates new form FarkasTamadasIranyUI
      */
-    public FarkasTamadasIranyUI() {
+    public FarkasTamadasIranyUI(LogoloInterface logolo) {
         initComponents();
         this.iranyGombPanel.setAlignmentX(CENTER_ALIGNMENT);
         this.iranyGombPanel.setAlignmentY(CENTER_ALIGNMENT);
-        this.riadoSzervezo = new RiadoSzervezo();
+        this.riadoSzervezo = new RiadoSzervezo(logolo);
     }
     
     /* */
