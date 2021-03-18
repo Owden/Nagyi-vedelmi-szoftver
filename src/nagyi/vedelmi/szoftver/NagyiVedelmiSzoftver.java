@@ -21,7 +21,11 @@ public class NagyiVedelmiSzoftver {
     public static void main(String[] args) throws IOException {
         //LogoloInterface logolo = new FajlLogolo(new File("Farkastamadasok.txt"));
         LogoloInterface logolo = new KonzolLogolo();
-        FarkasTamadasIranyUI farkasTamadasUI = new FarkasTamadasIranyUI(logolo);
+        Ertesito nagyiErtesito = new Ertesito(true);
+        Ertesito vadaszErtesito = new Ertesito(false);
+        NagyiErtesitoAblakUI nagyiErtesitoUI = new NagyiErtesitoAblakUI();
+        RiadoSzervezo riadoSzervezo = new RiadoSzervezo(logolo, nagyiErtesito, vadaszErtesito, nagyiErtesitoUI);
+        FarkasTamadasIranyUI farkasTamadasUI = new FarkasTamadasIranyUI(riadoSzervezo);
         farkasTamadasUI.setVisible(true);       
     }
 }

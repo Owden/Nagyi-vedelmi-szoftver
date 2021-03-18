@@ -15,8 +15,8 @@ public class Beolvasas {
     
     Scanner consolInput;
     
-    public Beolvasas() {        
-        this.consolInput = new Scanner(System.in);
+    public Beolvasas(Scanner konzol) {        
+        this.consolInput = konzol;        
     }
         
     public String getFarkasIrany() {
