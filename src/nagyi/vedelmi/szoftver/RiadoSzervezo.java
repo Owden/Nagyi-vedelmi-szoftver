@@ -16,10 +16,10 @@ public class RiadoSzervezo {
     private NagyiErtesitoAblakUI nagyiErtesitoUI;
     private LogoloInterface logolas;
     
-    public RiadoSzervezo(LogoloInterface logolas)  {
-        this.nagyiErtesito = new Ertesito(true);
-        this.vadaszErtesito = new Ertesito(false);
-        this.nagyiErtesitoUI = new NagyiErtesitoAblakUI();
+    public RiadoSzervezo(LogoloInterface logolas, Ertesito nagyiErtesito, Ertesito vadaszErtesito, NagyiErtesitoAblakUI nagyiErtesitoUI)  {
+        this.nagyiErtesito = nagyiErtesito;
+        this.vadaszErtesito = vadaszErtesito;
+        this.nagyiErtesitoUI = nagyiErtesitoUI;
         this.logolas = logolas;
     }
 
@@ -28,14 +28,12 @@ public class RiadoSzervezo {
      * @param farkasIranya A farkas érkezési iránya. 
      */
     public void riado(String farkasIranya) {        
-        this.nagyiErtesito.ertesitsd(farkasIranya);
-        String uzenet = this.nagyiErtesito.getUzenet();
+        String uzenet = this.nagyiErtesito.uzenetLetrehozas(farkasIranya);
         this.nagyiErtesitoUI.setUzenet(uzenet);
         this.nagyiErtesitoUI.setVisible(true);
         this.logolas.logold(uzenet);
 
-        this.vadaszErtesito.ertesitsd(farkasIranya);
-        uzenet = this.vadaszErtesito.getUzenet(); 
+        uzenet = this.vadaszErtesito.uzenetLetrehozas(farkasIranya);
         this.logolas.logold(uzenet);
     }
     

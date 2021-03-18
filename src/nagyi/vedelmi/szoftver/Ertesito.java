@@ -9,23 +9,19 @@ package nagyi.vedelmi.szoftver;
  *
  * @author Pesta
  */
-public class Ertesito {
-    String uzenet;
+public class Ertesito {    
     boolean nagyiErtesito;
     
     public Ertesito(boolean nagyiErtesito) {
         this.nagyiErtesito = nagyiErtesito;
     }
     
-    public void ertesitsd(String farkasIranya){
+    public String uzenetLetrehozas(String farkasIranya){
+        String uzenet;
         if (this.nagyiErtesito)
-            this.uzenet = "Beütött a baj " +farkasIranya+ "i irányból!";
+            uzenet = "Beütött a baj " +farkasIranya+ "i irányból!";
         else
-            this.uzenet = "A Nagyinál beütött a baj " +farkasIranya+ "i irányból!";
+            uzenet = "A Nagyinál beütött a baj " +farkasIranya+ "i irányból!";            
+        return uzenet;
     }
-    
-    public String getUzenet(){
-        return this.uzenet;
-    }
-    
 }
