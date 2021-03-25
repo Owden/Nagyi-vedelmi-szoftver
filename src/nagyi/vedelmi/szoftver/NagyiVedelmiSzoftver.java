@@ -6,7 +6,9 @@
 package nagyi.vedelmi.szoftver;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.Properties;
 
 /**
  *
@@ -19,8 +21,18 @@ public class NagyiVedelmiSzoftver {
      * @throws java.io.IOException
      */
     public static void main(String[] args) throws IOException {
-        //LogoloInterface logolo = new FajlLogolo(new File("Farkastamadasok.txt"));
-        LogoloInterface logolo = new KonzolLogolo();
+        FileInputStream konfigFajl = new FileInputStream("config.properties");
+        Properties konfigTulajdonsagok = new Properties();
+        konfigTulajdonsagok.load(konfigFajl);
+        LogoloInterface logolo;
+        
+        if(konfigTulajdonsagok.getProperty("Logolás-konfigurálása").equals("Konzol")) {
+            logolo = new KonzolLogolo();
+        }
+        else{
+            logolo = new FajlLogolo(new File("Farkastamadasok.txt"));
+        }
+       
         Ertesito nagyiErtesito = new Ertesito(true);
         Ertesito vadaszErtesito = new Ertesito(false);
         NagyiErtesitoAblakUI nagyiErtesitoUI = new NagyiErtesitoAblakUI();
