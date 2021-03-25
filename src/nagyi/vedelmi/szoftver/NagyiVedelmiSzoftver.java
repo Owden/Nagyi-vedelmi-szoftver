@@ -20,7 +20,7 @@ public class NagyiVedelmiSzoftver {
      * @param args the command line arguments
      * @throws java.io.IOException
      */
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, Exception {
         FileInputStream konfigFajl = new FileInputStream("config.properties");
         Properties konfigTulajdonsagok = new Properties();
         konfigTulajdonsagok.load(konfigFajl);
@@ -29,8 +29,11 @@ public class NagyiVedelmiSzoftver {
         if(konfigTulajdonsagok.getProperty("Logolás-konfigurálása").equals("Konzol")) {
             logolo = new KonzolLogolo();
         }
-        else{
+        else if(konfigTulajdonsagok.getProperty("Logolás-konfigurálása").equals("Fájl")){
             logolo = new FajlLogolo(new File("Farkastamadasok.txt"));
+        }
+        else {
+            throw new Exception("Nincs \"" + konfigTulajdonsagok.getProperty("Logolás-konfigurálása") + "\" logolási típus!");
         }
        
         Ertesito nagyiErtesito = new Ertesito(true);
