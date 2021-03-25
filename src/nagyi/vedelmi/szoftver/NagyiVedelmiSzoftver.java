@@ -30,7 +30,7 @@ public class NagyiVedelmiSzoftver {
             logolo = new KonzolLogolo();
         }
         else if(konfigTulajdonsagok.getProperty("Logolás-konfigurálása").equals("Fájl")){
-            logolo = new FajlLogolo(new File("Farkastamadasok.txt"));
+            logolo = new FajlLogolo(new File(konfigTulajdonsagok.getProperty("Logoló-fájl")));
         }
         else {
             throw new Exception("Nincs \"" + konfigTulajdonsagok.getProperty("Logolás-konfigurálása") + "\" logolási típus!");

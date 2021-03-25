@@ -23,7 +23,7 @@
 hs_err_pid*
 
 #projekt specifikus
-Farkastamadasok.txt
+*.txt
 
 #netbeans specifikus
 **/nbproject/private/
